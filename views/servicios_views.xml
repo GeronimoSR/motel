@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- vista tipo form del modelo motel.servicios -->	
+		<record model="ir.ui.view" id="servicios_form">
+		<field name="name">motel.servicios.form</field>
+		<field name="model">motel.servicios</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		<form>
+            <header>
+                 <field name="state" placeholder="estado" widget="statusbar" />
+            </header>
+            <sheet>
+                <group string="Datos de servicios">
+
+                    <field name="name" placeholder="Servicio" />
+					<field name="cantidad" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="name" />
+                            <field name="modalidad" />
+                        </tree>
+                    </field>
+                </group>
+            </sheet>
+		</form>
+        </field>
+		</record>
+
+        <!-- vista tipo tree del modelo motel.servicios -->	
+		<record model="ir.ui.view" id="mote_servicios_tree">
+			<field name="name">motel.servicios.tree</field>
+			<field name="model">motel.servicios</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="servicios" >
+						<field name="name" />
+						<field name="state" />
+				</tree>
+			</field>
+		</record>
+
+
+		<!-- ACCION PARA EL MODELO motel.servicios -->	
+		<record id="motel_servicios_action" model="ir.actions.act_window">
+			<field name="name">servicios</field>
+			<field name="res_model">motel.servicios</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+</odoo>

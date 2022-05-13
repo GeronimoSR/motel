@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- vista tipo form del modelo motel.reservacion -->	
+		<record model="ir.ui.view" id="reservacion_form">
+		<field name="name">motel.reservacion.form</field>
+		<field name="model">motel.reservacion</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		<form>
+            <sheet>
+                <group string="Datos de reservacion">
+                    <field name="huespedes" placeholder="Periodo" />
+                    <field name="habitaciones" placeholder="Alumno"/>
+                    <field name="servicios" placeholder="Plan"/>
+                </group>
+            </sheet>
+		</form>
+        </field>
+		</record>
+
+        <!-- vista tipo tree del modelo motel.reservacion -->	
+		<record model="ir.ui.view" id="motel_reservacion_tree">
+			<field name="huespedes">motel.reservacion.tree</field>
+			<field name="model">motel.reservacion</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="reservacion" >
+                    <field name="servicios"  />
+                    <field name="habitaciones" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="motel_reservacion_search">
+			<field name="huespedes">motel.reservacion.search</field>
+			<field name="model">motel.reservacion</field>
+			<field name="arch" type="xml">
+				<search>
+                    <field name="servicios"  />
+                    <field name="habitaciones" />
+				</search>
+			</field>
+		</record>
+
+
+
+		<!-- ACCION PARA EL MODELO motel.reservacion -->	
+		<record id="motel_reservacion_action" model="ir.actions.act_window">
+			<field name="huespedes">reservacion</field>
+			<field name="res_model">motel.reservacion</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+</odoo>

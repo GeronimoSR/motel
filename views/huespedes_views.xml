@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- vista tipo form del modelo motel.empleados -->	
+		<record model="ir.ui.view" id="empleados_form">
+		<field name="name">motel.huespedes.form</field>
+		<field name="model">motel.huespedes</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		<form>
+            <sheet>
+                <group string="Datos de huespedes">
+                    <field name="name" placeholder="Clave" />
+                    <field name="nombre" placeholder="Nombre"/>
+                    <field name="telefono" placeholder="Teléfono"/>							
+                    <field name="email" placeholder="Correo electrónico"/>
+                    <field name="sexo" placeholder="Sexo"/>
+                    <field name="edad" placeholder="Edad"/>
+                </group>
+            </sheet>
+		</form>
+        </field>
+		</record>
+
+        <!-- vista tipo tree del modelo motel.huespedes -->	
+		<record model="ir.ui.view" id="motel_huespedes_tree">
+			<field name="name">motel.huespedes.tree</field>
+			<field name="model">motel.huespedes</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="huespedes" >
+						<field name="Clave" />
+						<field name="nombre" />
+						<field name="telefono" />
+						<field name="sexo" />
+						<field name="edad" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="motel_huespedes_search">
+			<field name="name">motel.huespedes.search</field>
+			<field name="model">motel.huespedes</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="nombre" />
+					<field name="telefono" />
+					<field name="sexo" />
+					<field name="edad" />
+				</search>
+			</field>
+		</record>
+
+
+
+		<!-- ACCION PARA EL MODELO motel.huespedes -->	
+		<record id="motel_huespedes_action" model="ir.actions.act_window">
+			<field name="name">huespedes</field>
+			<field name="res_model">motel.huespedes</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+	<report id="kardex_id" model="motel.huespedes"
+		string="Kardex" report_type="qweb-pdf" name="motel.kardex"
+		attachment_use="False"/> 
+
+</odoo>

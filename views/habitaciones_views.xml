@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        
+
+        <!-- vista tipo tree del modelo escolares.periodos -->	
+		<record model="ir.ui.view" id="periodos_tree">
+			<field name="name">motel.habitaciones.tree</field>
+			<field name="nivel">motel.habitaciones</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="periodos" editable = "top" >
+						<field name="name" />
+						<field name="Habitaciones" />
+						<field name="Nivel" />
+						
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="escolares_periodos_search">
+			<field name="name">motel.habitaciones.search</field>
+			<field name="model">motel.habitaciones</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="Habitaciones" />
+					<field name="Nivel" />
+					
+				</search>
+			</field>
+		</record>
+
+
+
+		<!-- ACCION PARA EL MODELO motel.habitaciones -->	
+		<record id="motel_habitaciones_action" model="ir.actions.act_window">
+			<field name="name">habitaciones</field>
+			<field name="res_model">motel.habitaciones</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+
+</odoo>
